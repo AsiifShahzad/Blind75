@@ -1,11 +1,8 @@
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagrams={}
-        for word in strs:
-            key=''.join(sorted(word))
-            if key not in anagrams:
-                anagrams[key]=[]
-        
-            anagrams[key].append(word)
-        
-        return list(anagrams.values())
+def groupAnagram(strs: List[str]) -> List[List[str]]:
+    groupanagrams = dict()
+    for word in strs:
+        key = tuple(sorted(word))
+        if key not in groupanagrams:
+            groupanagrams[key] = []
+        groupanagrams[key].append(word)
+    return list(groupanagrams.values())
