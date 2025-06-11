@@ -1,5 +1,8 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        return tuple(sorted(word1)) == tuple(sorted(word2))
+
+    def isAnagram(self, s: str, t: str) -> bool:
         sfrequency={}
         if (len(s)!=len(t)):
             return False
